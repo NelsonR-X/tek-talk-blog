@@ -1,6 +1,6 @@
 import { createBucketClient } from "@cosmicjs/sdk"
 
-if (!process.env.COSMIC_BUCKET_SLUG)
+if (!process.env.NEXT_PUBLIC_COSMIC_BUCKET_SLUG)
   console.error(
     "Error: Environment variables missing. You need to create an environment variable file and include COSMIC_BUCKET_SLUG, COSMIC_READ_KEY, and COSMIC_WRITE_KEY environment variables."
   )
