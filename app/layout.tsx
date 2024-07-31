@@ -29,12 +29,14 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       </Head>
       <body className='bg-white dark:bg-zinc-950'>
         <Header name={siteData} />
+        {/* @ts-ignore */}
         <NavMenu
           className="flex justify-center my-10"
           query={{ type: "navigation-menus", slug: "header" }}
           hasMobileMenu
         />
         {children}
+        {/* @ts-ignore */}
         <NavMenu
           className="flex justify-center my-10"
           query={{ type: "navigation-menus", slug: "footer" }}
