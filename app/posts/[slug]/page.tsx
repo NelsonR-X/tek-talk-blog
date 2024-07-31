@@ -19,11 +19,24 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 export default async ({ params }: { params: { slug: string } }) => {
   const post = await getPost({ params });
   const suggestedPosts = await getRelatedPosts({ params });
+  console.log(post.metadata.hero)
 
   return (
     <>
-      {post && post.metadata.hero?.imgix_url && (
-        <Image className='mb-5 h-auto w-full bg-no-repeat object-cover object-center' src={`${post.metadata.hero?.imgix_url}?w=1400&auto=format`} width={2000} height={640} priority alt={post.title} />
+      {post?.metadata.hero?.imgix_url && (
+        <Image 
+          className='mb-5 h-auto w-75 bg-no-repeat object-cover object-center' 
+          src={post.metadata.hero?.imgix_url}
+          width={1400}
+          height={340}
+          priority
+          alt={post.title}
+          style={{
+            width: '50%',
+            display: 'flex',
+            margin: 'auto',
+          }}
+        />
       )}
       <main className='mx-auto flex flex-col justify-center'>
         <div className='mx-auto flex w-full flex-col items-start justify-center px-4 md:flex-row'>
