@@ -19,7 +19,6 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 export default async ({ params }: { params: { slug: string } }) => {
   const post = await getPost({ params });
   const suggestedPosts = await getRelatedPosts({ params });
-  console.log(post.metadata.hero)
 
   return (
     <>
