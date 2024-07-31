@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavMenu } from "@/cosmic/blocks/navigation-menu/NavMenu";
 import '../styles/globals.css';
 import { getGlobalData } from '../lib/cosmic';
 import Generator from 'next/font/local';
@@ -28,7 +29,16 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       </Head>
       <body className='bg-white dark:bg-zinc-950'>
         <Header name={siteData} />
+        <NavMenu
+          className="flex justify-center my-10"
+          query={{ type: "navigation-menus", slug: "header" }}
+          hasMobileMenu
+        />
         {children}
+        <NavMenu
+          className="flex justify-center my-10"
+          query={{ type: "navigation-menus", slug: "footer" }}
+        />
       </body>
     </html>
   );
