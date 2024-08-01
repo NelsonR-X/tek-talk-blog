@@ -14,7 +14,10 @@ const DarkModeToggle = () => {
 
   return (
     <button onClick={onClick} title={`Enable ${mode === "dark" ? "light" : "dark"} mode`}>
-      {mode === "dark" ? <Sun stroke="white" /> : <Moon />}
+      {mode === "dark"
+        ? <Sun className="text-zinc-500 dark:text-zinc-200" />
+        : <Moon className="text-zinc-500 dark:text-zinc-200"/>
+      }
     </button>
   );
 };
