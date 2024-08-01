@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import OBMLogo from './OBMLogo';
 import { GlobalData } from '../lib/types';
+import DarkModeToggle from 'components/ThemeToggle';
 
 export default function SiteLogo({ siteData }: { siteData: GlobalData }): JSX.Element {
   return (
@@ -11,7 +12,10 @@ export default function SiteLogo({ siteData }: { siteData: GlobalData }): JSX.El
           {siteData.metadata.site_title}
         </Link>
       </h1>
-      <span className='hidden text-lg tracking-wide text-zinc-500 dark:text-zinc-200 md:flex top-[-7px] relative'>{siteData.metadata.site_tag}</span>
+      <div className='flex gap-x-5 items-baseline'>
+        <DarkModeToggle/>
+        <span className='hidden text-lg tracking-wide text-zinc-500 dark:text-zinc-200 md:flex top-[-7px] relative'>{siteData.metadata.site_tag}</span>
+      </div>
     </div>
   );
 }
