@@ -25,7 +25,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang='en' className={`${sans.variable} font-sans`}>
       <Head>
+        <title>THIs</title>
         <meta name="google-adsense-account" content="ca-pub-7878722842931483"/>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7878722842931483"/>
       </Head>
       <body className='bg-white dark:bg-zinc-950'>
         <Header name={siteData} />
