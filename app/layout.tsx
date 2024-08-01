@@ -25,22 +25,22 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang='en' className={`${sans.variable} font-sans`}>
       <Head>
-        <meta name="google-adsense-account" content="ca-pub-3150133541573315" />
+        <meta name="google-adsense-account" content="ca-pub-7878722842931483"/>
       </Head>
       <body className='bg-white dark:bg-zinc-950'>
         <Header name={siteData} />
         {/* @ts-ignore */}
-        {/* <NavMenu
-          className="flex justify-center my-10"
+        <NavMenu
+          className="flex justify-start mx-5 mb-5 md:justify-center"
           query={{ type: "navigation-menus", slug: "header" }}
           hasMobileMenu
-        /> */}
+        />
         {children}
         {/* @ts-ignore */}
-        {/* <NavMenu
-          className="flex justify-center my-10"
+        <NavMenu
+          className="flex justify-center mb-5"
           query={{ type: "navigation-menus", slug: "footer" }}
-        /> */}
+        />
       </body>
     </html>
   );
